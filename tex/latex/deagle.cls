@@ -8,11 +8,11 @@
 % PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %---------------------------------------------------------------------------------
 
-\usepackage{amsmath,amsfonts,stmaryrd,amssymb} % Math packages
-\usepackage{enumerate} % Custom item numbers for enumerations
-\usepackage[ruled]{algorithm2e} % Algorithms
-\usepackage[framemethod=tikz]{mdframed} % Allows defining custom boxed/framed environments
-\usepackage{listings} % File listings, with syntax highlighting
+\usepackage{amsmath,amsfonts,stmaryrd,amssymb}
+\usepackage{enumerate}
+\usepackage[ruled]{algorithm2e}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
 \lstset{basicstyle=\ttfamily}
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
@@ -31,7 +31,6 @@
 %---------------------------------------------------------------------------------
 
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
 \newcommand{\lipsent}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit.}
 \newcommand{\lippar}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adip-iscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id,vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus etnetus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem.}
 
@@ -54,10 +53,10 @@
 
 \geometry{
 	paper=letterpaper, % Paper size, change to letterpaper for US letter size
-	top=2.5cm, % Top margin
-	bottom=3cm, % Bottom margin
-	left=2.5cm, % Left margin
-	right=2.5cm, % Right margin
+	top=1in, % Top margin
+	bottom=1in, % Bottom margin
+	left=1in, % Left margin
+	right=1in, % Right margin
 	headheight=14pt, % Header height
 	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
 	headsep=1.2cm, % Space from the top margin to the baseline of the header
@@ -78,17 +77,34 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{XCharter} % Use the XCharter fonts
+\usepackage[scaled=0.85]{beramono}
+
+
+
+%---------------------------------------------------------------------------------
+%	CENTERED TABLE
+%---------------------------------------------------------------------------------
+
+% Define a custom environment for centered tables
+\newenvironment{ctable}[1]{
+	\medskip
+	\tabularx{\textwidth}{|*{#1}{>{\centering\arraybackslash}X|}}
+	\hline
+}{
+	\endtabularx
+	\medskip
+}
 
 %---------------------------------------------------------------------------------
 %	COMMAND LINE ENVIRONMENT
 %---------------------------------------------------------------------------------
 
 \mdfdefinestyle{commandline}{
-	leftmargin=10pt,
-	rightmargin=10pt,
+	leftmargin=0.5in,
+	rightmargin=0.5in,
 	innerleftmargin=15pt,
 	middlelinecolor=black!50!white,
-	middlelinewidth=2pt,
+	middlelinewidth=1pt,
 	frametitlerule=false,
 	backgroundcolor=black!5!white,
 	frametitle={Command Line},
@@ -120,8 +136,8 @@
 	innerbottommargin=0.8\baselineskip,
 	topline=false, bottomline=false,
 	leftline=false, rightline=false,
-	leftmargin=2cm,
-	rightmargin=2cm,
+	leftmargin=0.5in,
+	rightmargin=0.5in,
 	singleextra={%
 		\draw[fill=black!10!white](P)++(0,-1.2em)rectangle(P-|O);
 		\node[anchor=north west]
