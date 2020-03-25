@@ -16,7 +16,7 @@
 \lstset{basicstyle=\ttfamily}
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
-\usepackage[dvipsnames]{xcolor}
+\usepackage{xcolor}
 \usepackage[english]{babel}
 \usepackage{blindtext}
 \usepackage{tabularx}
