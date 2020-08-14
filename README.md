@@ -1,2 +1,2 @@
 # LaTeX-Class
-A LaTeX Class for Documents
+A nice-looking LaTeX Class for general documents
